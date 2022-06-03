@@ -72,9 +72,7 @@ export default function(ctx, api) {
     return newIds;
   };
 
-  api.add = function (geojson) {
-    const featureCollection = JSON.parse(JSON.stringify(normalize(geojson)));
-
+  api.add = function (featureCollection) {
     const ids = featureCollection.features.map((feature) => {
       feature.id = feature.id || hat();
 
